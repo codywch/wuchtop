@@ -27,7 +27,7 @@ export default function Home({ allPostsData }) {
 				</p>
 				<p>If you like aquarium or fish too. You can contact me on 
 					<a target="_blank" href="https://space.bilibili.com/10546710"> Bilibili</a> or 
-					<a target="_blank" href="#"> Tik Tok</a>
+					<a target="_blank" href="https://www.douyin.com/user/MS4wLjABAAAAwJQed6Ai_eZDuOtu1WomK5cxJ8qr_YJDvfEuW1s2hcg"> Tik Tok</a>
 				</p>
 			</section>
 
