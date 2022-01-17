@@ -21,10 +21,13 @@ export default function Home({ allPostsData }) {
 				<title>{ siteTitle }</title>
 			</Head>
 			<section className={utilStyles.headingMd}>
-				<p>[Your Self Introduction]</p>
 				<p>
-					(This is a sample website - you’ll be building a site like this on{' '}
-					<a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+					Hello, I'm <b>Cody</b>.
+					I'm a full-stack software engineer and a Aquascaper(Planted Aquarium).
+				</p>
+				<p>If you like aquarium or fish too. You can contact me on 
+					<a target="_blank" href="https://space.bilibili.com/10546710"> Bilibili</a> or 
+					<a target="_blank" href="#"> Tik Tok</a>
 				</p>
 			</section>
 
