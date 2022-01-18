@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import Top from './top'
 
 const name = 'Cody Wu'
-export const siteTitle = 'Cody Wu\'s Blog'
+export const siteTitle = "Cody Wu Blog"
 
 export default function Layout({ children, home }) {
 	return (
-		<div className={styles.container}>
+		<div className='w-full h-screen dark:bg-gray-800'>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Personal Blog, Technology Blog" />
@@ -19,21 +19,22 @@ export default function Layout({ children, home }) {
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
-			<header className={styles.header}>
+			<header className='flex justify-center pt-24'>
+				<Top />
 				{home ? (
-					<>
+					<div className="">
 						<Image
 							priority
 							src="/images/profile.jpg"
-							className={utilStyles.borderCircle}
+							className="rounded-full"
 							height={144}
 							width={144}
 							alt={name}
 						/>
 						<h1 className={utilStyles.heading2Xl}>{name}</h1>
-					</>
+					</div>
 				) : (
-					<>
+					<div className="">
 						<Link href="/">
 							<a>
 								<Image
@@ -51,17 +52,22 @@ export default function Layout({ children, home }) {
 								<a className={utilStyles.colorInherit}>{name}</a>
 							</Link>
 						</h2>
-					</>
+					</div>
 				)}
 			</header>
-			<main>{children}</main>
-			{!home && (
-				<div className={styles.backToHome}>
-					<Link href="/">
-						<a>← Back to home</a>
-					</Link>
+			<main className="flex flex-col items-center w-full">
+				<div className="z-20 max-w-4xl p-5">
+					{children}
+					{!home && (
+						<div className="dark:bg-gray-800 my-5">
+							<Link href="/">
+								<a>← Back to home</a>
+							</Link>
+						</div>
+					)}
 				</div>
-			)}
+			</main>	
+			<div className="fixed top-0 left-0 w-screen h-screen bg-center bg-cover opacity-40 xl:opacity-100 bg-bgimg"></div>
 		</div>
 	)
 }
