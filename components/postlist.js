@@ -1,23 +1,43 @@
 import Link from 'next/link'
-import utilStyles from '../styles/utils.module.css'
+import Date from './date'
 
 export default function Postlist({ allPostsData }) {
   return (
-    <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-      <h2 className={utilStyles.headingLg}>Blog</h2>
-      <ul className={utilStyles.list}>
+    <div className="">
+      <div className="w-full">
+        <h1 className="mb-8 text-5xl text-blue-800 dark:text-blue-200">Posts</h1>
+      </div>
+      <ol className="my-2 font-serif">
         {allPostsData.map(({ id, date, title }) => (
-          <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              <Date dateString={date} />
-            </small>
-          </li>
+          <Link href={`/posts/${id}`} className="w-full" key={id}>
+            <a>
+              <li className="">
+                <div className="mb-2 last:mb-0">
+                  {id != allPostsData[0].id ? (<div className="w-full mx-auto my-6 border border-gray-400 border-opacity-20"></div>) : ""}
+
+                  <div className="flex flex-row">
+                    <div className="p4 mr-8 rounded dark:bg-gray-700 bg-lime-200">
+                      <div className="relative w-32 h-32 mx-auto my-auto">
+                        <span className="p-4 text-center"></span>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col justify-between w-full border-y-green-500">
+                      <div className="flex flex-col justify-between bm-4">
+                        <h2 className="text-xl font-semibold">{title}</h2>
+                        <Date dateString={date} />
+                      </div>
+                      <p>
+                        To help prevent giscus from hitting GitHub API's rate limit, we cache the access tokens in Supabase. Here's how I did it.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </a>
+          </Link>
         ))}
-      </ul>
-    </section>
+      </ol>
+    </div>
   )
 }

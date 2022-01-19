@@ -22,17 +22,23 @@ export default function Layout({ children, home }) {
 			<header className='flex justify-center pt-24'>
 				<Top />
 				{home ? (
-					<div className="">
-						<Image
-							priority
-							src="/images/profile.jpg"
-							className="rounded-full"
-							height={144}
-							width={144}
-							alt={name}
-						/>
-						<h1 className={utilStyles.heading2Xl}>{name}</h1>
-					</div>
+					<div className="flex flex-col">
+						<div className="flex">
+							<span className="grow"></span>
+							<Image
+								priority
+								src="/images/profile.jpg"
+								className="rounded-full grow-0"
+								height={144}
+								width={144}
+								alt={name}
+							/>
+							<span className="grow"></span>
+						</div>
+						<div>
+							<h1 className={utilStyles.heading2Xl}>{name}</h1>
+						</div>
+					</div>	
 				) : (
 					<div className="">
 						<Link href="/">
@@ -57,17 +63,10 @@ export default function Layout({ children, home }) {
 			</header>
 			<main className="flex flex-col items-center w-full">
 				<div className="z-20 max-w-4xl p-5">
-					{children}
-					{!home && (
-						<div className="dark:bg-gray-800 my-5">
-							<Link href="/">
-								<a>← Back to home</a>
-							</Link>
-						</div>
-					)}
+					{children}	
 				</div>
 			</main>	
-			<div className="fixed top-0 left-0 w-screen h-screen bg-center bg-cover opacity-40 xl:opacity-100 bg-bgimg"></div>
+			<div className="fixed top-0 left-0 w-screen h-screen bg-center bg-cover opacity-100 dark:opacity-70 bg-bgimg"></div>
 		</div>
 	)
 }

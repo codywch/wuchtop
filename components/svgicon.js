@@ -8,7 +8,7 @@ export default function Svgicon({ hrefUrl, svgPath, svgTxt }) {
         </a>
         <span className='basis-1/3'></span>
       </div>
-      <p className="text-xs">{svgTxt}</p>
+      {svgTxt ? <p className="text-xs">{svgTxt}</p> : ""}
     </div>
   )
 }

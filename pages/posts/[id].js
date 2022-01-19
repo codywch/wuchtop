@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
 import utilStyles from '../../styles/utils.module.css'
@@ -22,6 +23,11 @@ export default function Post({ postData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </section>
 
+      <div className="dark:bg-gray-800 my-5">
+        <Link href="/posts">
+          <a>← Back to posts</a>
+        </Link>
+      </div>
     </Layout>
   )
 }
