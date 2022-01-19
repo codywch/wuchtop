@@ -3,6 +3,9 @@
 # nohup.out
 nohup.out
 
+# package-lock file
+package-lock.json
+
 # dependencies
 /node_modules
 /.pnp
