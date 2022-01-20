@@ -3,13 +3,14 @@ import Image from 'next/image'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Top from './top'
+import Footer from './footer'
 
 const name = 'Cody Wu'
 export const siteTitle = "Cody Wu Blog"
 
 export default function Layout({ children, home }) {
 	return (
-		<div className='w-full h-screen dark:bg-gray-800'>
+		<div className='w-full h-full dark:bg-gray-900'>
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Personal Blog, Technology Blog" />
@@ -20,7 +21,7 @@ export default function Layout({ children, home }) {
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
 			<header className='flex justify-center pt-24'>
-				<Top />
+				<Top home />
 				{home ? (
 					<div className="flex flex-col">
 						<div className="flex">
@@ -64,6 +65,7 @@ export default function Layout({ children, home }) {
 			<main className="flex flex-col items-center w-full">
 				<div className="z-20 max-w-4xl p-5">
 					{children}	
+					<Footer />
 				</div>
 			</main>	
 			<div className="fixed top-0 left-0 w-screen h-screen bg-center bg-cover opacity-100 dark:opacity-70 bg-bgimg"></div>

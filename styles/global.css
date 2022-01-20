@@ -10,4 +10,9 @@
   .svgicon-svg {
     @apply h-8 w-8 dark:hover:text-indigo-200 hover:text-indigo-500 text-blue-900 dark:text-blue-200
   }
+
+  /* footer items */
+  .footer-items {
+    @apply flex flex-col justify-between items-center space-y-3
+  }
 }

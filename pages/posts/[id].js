@@ -23,9 +23,9 @@ export default function Post({ postData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </section>
 
-      <div className="dark:bg-gray-800 my-5">
-        <Link href="/posts">
-          <a>← Back to posts</a>
+      <div className="my-5">
+        <Link href="/posts" className="cursor-pointer">
+          ← Back to posts
         </Link>
       </div>
     </Layout>

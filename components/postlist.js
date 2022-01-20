@@ -10,8 +10,7 @@ export default function Postlist({ allPostsData }) {
       <ol className="my-2 font-serif">
         {allPostsData.map(({ id, date, title }) => (
           <Link href={`/posts/${id}`} className="w-full" key={id}>
-            <a>
-              <li className="">
+              <li className="cursor-pointer">
                 <div className="mb-2 last:mb-0">
                   {id != allPostsData[0].id ? (<div className="w-full mx-auto my-6 border border-gray-400 border-opacity-20"></div>) : ""}
 
@@ -34,7 +33,6 @@ export default function Postlist({ allPostsData }) {
                   </div>
                 </div>
               </li>
-            </a>
           </Link>
         ))}
       </ol>
