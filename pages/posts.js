@@ -19,7 +19,7 @@ export default function Posts({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section className="w-full max-w-2xl">
+      <section>
         <Postlist allPostsData={allPostsData} />
       </section> 
     </Layout>

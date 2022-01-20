@@ -6,7 +6,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import React, { useState, useEffect } from "react";
 import { debounce } from "../utilities/helpers";
 
-export default function Top(home) {
+export default function Top({ home }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
 

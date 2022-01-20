@@ -1,16 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
 import Top from './top'
 import Footer from './footer'
 
-const name = 'Cody Wu'
 export const siteTitle = "Cody Wu Blog"
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
 	return (
-		<div className='w-full h-full dark:bg-gray-900'>
+		<div className="flex flex-col justify-between items-center min-h-screen h-full w-full dark:bg-gray-900">
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta name="description" content="Personal Blog, Technology Blog" />
@@ -20,55 +16,17 @@ export default function Layout({ children, home }) {
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
-			<header className='flex justify-center pt-24'>
-				<Top home />
-				{home ? (
-					<div className="flex flex-col">
-						<div className="flex">
-							<span className="grow"></span>
-							<Image
-								priority
-								src="/images/profile.jpg"
-								className="rounded-full grow-0"
-								height={144}
-								width={144}
-								alt={name}
-							/>
-							<span className="grow"></span>
-						</div>
-						<div>
-							<h1 className={utilStyles.heading2Xl}>{name}</h1>
-						</div>
-					</div>	
-				) : (
-					<div className="">
-						<Link href="/">
-							<a>
-								<Image
-									priority
-									src="/images/profile.jpg"
-									className={utilStyles.borderCircle}
-									height={108}
-									width={108}
-									alt={name}
-								/>
-							</a>
-						</Link>
-						<h2 className={utilStyles.headingLg}>
-							<Link href="/">
-								<a className={utilStyles.colorInherit}>{name}</a>
-							</Link>
-						</h2>
-					</div>
-				)}
-			</header>
-			<main className="flex flex-col items-center w-full">
-				<div className="z-20 max-w-4xl p-5">
-					{children}	
-					<Footer />
-				</div>
-			</main>	
-			<div className="fixed top-0 left-0 w-screen h-screen bg-center bg-cover opacity-100 dark:opacity-70 bg-bgimg"></div>
+	
+			<Top home />	
+
+			<div className="flex-none w-full h-20" />
+
+			<main className="flex z-10 max-w-4xl grow">	
+				{children}
+			</main>
+
+			<Footer />
+			<div className="fixed z-0 top-0 left-0 w-screen h-screen bg-center bg-cover opacity-100 dark:opacity-70 bg-bgimg"></div>
 		</div>
 	)
 }

@@ -3,7 +3,7 @@ import Date from './date'
 
 export default function Postlist({ allPostsData }) {
   return (
-    <div className="">
+    <div className="flex flex-col justify-between items-center p-4 w-full max-w-2xl">
       <div className="w-full">
         <h1 className="mb-8 text-5xl text-blue-800 dark:text-blue-200">Posts</h1>
       </div>
