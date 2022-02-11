@@ -5,6 +5,8 @@ import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
 export default function Post({ postData }) {
+  let tags = Array.from(postData.tags)
+  console.log(tags)
   return (
     <Layout> 
       {/* Add this <Head> tag */}
@@ -12,11 +14,18 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
 
-      <section className="max-w-2xl px-5 flex flex-col justify-between items-center">
+      <section className="max-w-xl px-5 flex flex-col justify-between items-center">
         <article className="grow py-5">
-          <h1 className="text-5xl font-bold mb-4">{postData.title}</h1>
+          <h1 className="text-5xl font-bold mb-4 leading-tight">{postData.title}</h1>
           <div className="font-bold text-xl">
             <Date dateString={postData.date} />
+          </div>
+          <div className="flex flex-row mt-2">
+            {tags.map(tag => (
+              <Link href={`/tags/${tag.toUpperCase()}`} key={tag}>
+                <div className="hover:cursor-pointer hover:bg-blue-200 dark:hover:bg-gray-600 border rounded mr-2 px-2 py-1">{tag}</div>
+              </Link>
+            ))}
           </div>
 
           <div className="mt-5 leading-loose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> 

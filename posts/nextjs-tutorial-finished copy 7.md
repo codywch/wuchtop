@@ -1,11 +1,11 @@
 ---
 title: 'Next.js Tutorial Finished'
 metaTitle: 'Next.js Tutorial Finished'
-metaDesc: 'I used Next.js to build this blog I used Next.js to build this blog I used Next.js to build this blog I used Next.js to build this blog I used Next.js to build this blog I used Next.js to build this blog I used Next.js to build this blog I used Next.js to build this blog I used Next.js to build this blog'
+metaDesc: 'I used Next.js to build this blog'
 date: '2022-01-17'
 socialImage: images/social/next-js-tutorial.png
 tags:
-  - next-js
+  - open-source
   - tutorial
 ---
 

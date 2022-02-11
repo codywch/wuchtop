@@ -6,31 +6,28 @@ export default function Footer() {
     <footer className="w-full z-10"> 
       <hr className="mb-8 border-gray-400 border-1 border-opacity-30" />
       <div className="mx-auto max-w-2xl text-indigo-800 dark:text-blue-300">
-        <div className="grid justify-between items-center w-full gap-3 grid-cols-3 pb-8 sm:grid-cols-[repeat(3, min-content)]">
+        <div className="grid justify-between items-center w-full grid-cols-4 pb-8 sm:grid-cols-[repeat(4, min-content)]">
           <div className="footer-items">
             <Link href="/">
               <a>Home</a>
             </Link>
-            <Link href="/">
+          </div>
+
+          <div className="footer-items">
+            <Link href="/posts">
+              <a>Posts</a>
+            </Link>
+          </div>
+
+          <div className="footer-items">
+            <Link href="/tags">
+              <a>Tags</a>
+            </Link>
+          </div>
+
+          <div className="footer-items">
+            <Link href="/about">
               <a>About</a>
-            </Link>
-          </div>
-
-          <div className="footer-items">
-            <Link href="/posts">
-              <a>Posts</a>
-            </Link>
-            <Link href="/">
-              <a>Tags</a>
-            </Link>
-          </div>
-
-          <div className="footer-items">
-            <Link href="/posts">
-              <a>Posts</a>
-            </Link>
-            <Link href="/">
-              <a>Tags</a>
             </Link>
           </div>
         </div>

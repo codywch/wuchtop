@@ -28,7 +28,7 @@ export default function Top({ home }) {
   }, [prevScrollPos, visible, handleScroll])
 
   return (
-    <div className={`fixed ${visible ? 'top-0' : '-top-20'} ease duration-300 text-center min-w-[70%] sm:min-w-[50%] 
+    <div className={`fixed ${visible ? 'top-0' : '-top-20'} ease duration-300 text-center min-w-[30%] sm:min-w-[30%] 
      transform max-w-2xl z-30 flex flex-row bg-white bg-opacity-50 py-3 shadow backdrop-filter backdrop-blur
     dark:bg-gray-800 text-blue-800 dark:bg-opacity-50 dark:text-blue-300`}>
       <div className="basis-1/4 pt-2">
@@ -39,7 +39,7 @@ export default function Top({ home }) {
       </div>  
 
       {headerNavLinks.map((link) => (
-        <div key={link.title} className="basis-1/4 duration-500 flex justify-center items-center 
+        <div key={link.title} className="basis-1/5 duration-500 flex justify-center items-center 
         text-center font-bold">
         <Link 
           href={link.href}
@@ -48,7 +48,7 @@ export default function Top({ home }) {
         </Link>
         </div>
       ))}
-      <div className="basis-1/4"><ThemeSwitch /></div>  
+      <div className="basis-1/5"><ThemeSwitch /></div>  
     </div>
   )
 }
